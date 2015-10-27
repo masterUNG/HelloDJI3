@@ -7,7 +7,7 @@ import android.util.Log;
 import dji.sdk.api.DJIDrone;
 import dji.sdk.api.DJIDroneTypeDef;
 import dji.sdk.api.DJIError;
-import dji.sdk.interfaces.DJIGeneralListener;
+import dji.sdk.interfaces.DJIGerneralListener;
 import dji.sdk.interfaces.DJIReceivedVideoDataCallBack;
 import dji.sdk.widget.DjiGLSurfaceView;
 
@@ -29,13 +29,12 @@ public class FPVActivity extends AppCompatActivity {
             public void run(){
                 try{
 
-                    DJIDrone.checkPermission(getApplicationContext(), new DJIGeneralListener() {
+                    DJIDrone.checkPermission(getApplicationContext(), new DJIGerneralListener() {
                         @Override
                         public void onGetPermissionResult(int result) {
-
                             if(result == 0) {
                                 // show success
-                                Log.e(TAG, "onGetPermissionResult ="+result);
+                                Log.e(TAG, "onGetPermissionResult =" + result);
                                 Log.e(TAG,
                                         "onGetPermissionResultDescription="+ DJIError.getCheckPermissionErrorDescription(result));
                             } else {
@@ -44,9 +43,9 @@ public class FPVActivity extends AppCompatActivity {
                                 Log.e(TAG,
                                         "onGetPermissionResultDescription="+DJIError.getCheckPermissionErrorDescription(result));
                             }
-
-                        }   // event
+                        }
                     });
+
 
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
@@ -56,7 +55,7 @@ public class FPVActivity extends AppCompatActivity {
         }.start();
 
 
-        DroneCode = 1;
+        DroneCode = 2;
         onInitSDK(DroneCode);
 
 

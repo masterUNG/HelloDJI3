@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.hardware.usb.UsbManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 
 import dji.midware.data.manager.P3.ServiceManager;
 import dji.midware.usb.P3.DJIUsbAccessoryReceiver;
@@ -16,7 +17,7 @@ public class DJIAoaActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_djiaoa);
+        setContentView(new View(this));
 
 
         if (isStarted) {
