@@ -17,6 +17,7 @@
             android:value="f3f7e4a8041c09be06e5d40c" />
 
 
+
         <activity android:name=".FPVActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
